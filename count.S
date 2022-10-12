@@ -2,7 +2,7 @@
 	.EQU	LED_PINa, 16
 	.EQU	LED_PINb, 17
 	.EQU	LED_PINc, 18
-	.EQU	LED_PINd, 19
+	.EQU	LED_PINd, 19         @Choose the pins
 	.EQU	LED_PINe, 20
 	.EQU	LED_PINf, 21
 	.EQU	LED_PINg, 22
@@ -29,7 +29,7 @@ main:
 	MOV	R0, #LED_PINc
 	BL	gpio_init
 	MOV	R0, #LED_PINc
-	MOV	R1, #GPIO_OUT
+	MOV	R1, #GPIO_OUT             @Initialize LEDPIN1 which is the Led
 	BL	link_gpio_set_dir
 @pin4
 	MOV	R0, #LED_PINd
@@ -60,26 +60,26 @@ main:
 loop:
 @0
 	MOV	R0, #LED_PINa
-	MOV	R1, #1
-	BL	link_gpio_put
+	MOV	R1, #1         @Turn on a	
+	BL	link_gpio_put  
 	MOV	R0, #LED_PINb
-	MOV	R1, #1
+	MOV	R1, #1         @Turn on b 
 	BL	link_gpio_put
 	MOV	R0, #LED_PINc
-	MOV	R1, #1
+	MOV	R1, #1         @Turn on c 
 	BL	link_gpio_put
 	MOV	R0, #LED_PINd
-	MOV	R1, #1
+	MOV	R1, #1         @Turn on d
 	BL	link_gpio_put
 	MOV	R0, #LED_PINe
-	MOV	R1, #1
+	MOV	R1, #1        @Turn on e 
 	BL	link_gpio_put
 	MOV	R0, #LED_PINf
-	MOV	R1, #1
+	MOV	R1, #1   	  @Turn on f
 	BL	link_gpio_put
-	LDR	R0, =sleep_time
+	LDR	R0, =sleep_time   @Sleep 
 	BL	sleep_ms
-	BL	off
+	BL	off      @Call the Turn all lights off function
 @1
 	MOV	R0, #LED_PINb
 	MOV	R1, #1
@@ -268,8 +268,6 @@ off:
 	MOV	R0, #LED_PINg
 	MOV	R1, #0
 	BL	link_gpio_put
-	LDR	R0, =sleep_time
-	BL	sleep_ms
 	POP {r4, pc}
 
 .data
