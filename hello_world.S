@@ -11,14 +11,14 @@
 .global main	            @ Provide program starting address to linker
 
 main:
-	MOV	R7, #0		@ initialize counter to 0
+	MOV	R7, #100		@ initialize counter to 0
 	BL	stdio_init_all	@ initialize uart or usb
 loop:
 	LDR	R0, =helloworld	@ load address of helloworld string
 	ADD	R7, #1		@ Increment counter
 	MOV	R1, R7		@ Move the counter to second parameter
 	BL	printf		@ Call pico_printf
-	B	loop		@ loop forever
+	CBZ R7,	loop		@ loop forever
 		
 .data
 	       .align  4	@ necessary alignment
