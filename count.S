@@ -1,3 +1,4 @@
+@ Done By Samuel Brandt and Logan Fouts Group F
 @count from 0 to 9 on 7 segment display
 	.EQU	LED_PINa, 16
 	.EQU	LED_PINb, 17

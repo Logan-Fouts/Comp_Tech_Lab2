@@ -1,4 +1,4 @@
-@
+@ Done By Samuel Brandt and Logan Fouts Group F
 @ Assembler program print out "Hello World"
 @ using the Pico SDK.
 @

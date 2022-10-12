@@ -1,3 +1,4 @@
+@ Done By Samuel Brandt and Logan Fouts Group F
 @ Assembler program to flash three LEDs connected to the
 @ Raspberry Pi Pico GPIO port using the Pico SDK.
 @
